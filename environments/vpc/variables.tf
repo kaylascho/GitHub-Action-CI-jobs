@@ -19,7 +19,7 @@ variable "cluster_name" {
 variable "availability_zones" {
   type        = list(string)
   description = "Availability zones"
-  default     = ["us-west-1a", "us-west-1b", "us-west-1c"]
+  default     = ["us-west-1a", "us-west-1c"]
 }
 
 variable "private_subnets" {
