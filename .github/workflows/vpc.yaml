@@ -1,0 +1,20 @@
+# Link for permission https://docs.github.com/en/actions/using-jobs/assigning-permissions-to-jobs
+name: VPC Deploy
+on:
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  pull-requests: write
+  statuses: write
+  actions: read
+  contents: read
+
+jobs:
+  call-vpc-workflow:
+    uses: ./.github/workflows/deploy.yaml
+    with:
+      work-dir: "environments/vpc"
+      aws-region: "us-west-1"
+    secrets:
+      CI_ROLE: ${{ secrets.CI_ROLE }}

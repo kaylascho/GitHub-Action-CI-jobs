@@ -1,0 +1,3 @@
+# state files or directories to ignore
+.terraform/
+oidc/
